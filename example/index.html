@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Analytics.js</title>
-  <script src="../analytics.js"></script>
+  <script src="../dist/analytics.umd.js"></script>
 </head>
 <body>
   <a id="app" class="btn" href="http://lsong.org">trackClick</a>
 </body>
 <script>
-  const ga = Analytics();
-  ga.trackView();
+  // !! just for debug ...
+  Analytics.ajax = function fakeAjax(url, data, done){
+    console.debug('fake http: POST', url, data);
+    setTimeout(done, 1000); // network delay ..
+  };
+
+  const ga = Analytics({
+    projectId: 'myapp',
+  });
+  ga.trackPage();
   document.addEventListener('click', e => {
     ga.trackClick(e);
   });

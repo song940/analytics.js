@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "rollup": "^1.15.4",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-license": "^0.9.0",
+    "rollup-plugin-uglify-es": "^0.0.1"
+  },
+  "name": "analytics",
+  "description": "> analytics sdk",
+  "version": "0.0.0",
+  "main": "analytics.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "node test",
+    "build:umd": "NODE_ENV=umd rollup -c",
+    "build:cjs": "NODE_ENV=cjs rollup -c",
+    "build": "npm run build:cjs && npm run build:umd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/analytics.js.git"
+  },
+  "author": "Lsong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/analytics.js/issues"
+  },
+  "homepage": "https://github.com/song940/analytics.js#readme",
+  "keywords": [
+    "analytics"
+  ]
+}
